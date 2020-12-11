@@ -11,13 +11,13 @@
 <body>
     <div id="app">
         <div class="ui cards">
-            <github-profile v-for="username in usernames" :username="username"></github-profile>
+            <github-profile v-for="username in usernames" v-bind:username="username"></github-profile>
         </div>
     </div>
     <script type="text/x-template" id="profile-template">
         <div class="ui card">
             <div class="image">
-              <img :src="user.avatar_url">
+              <img v-bind:src="user.avatar_url">
             </div>
             <div class="content">
               <a class="header">{{user.name}}</a>
