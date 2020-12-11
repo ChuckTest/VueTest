@@ -20,5 +20,8 @@ Vue.component('github-profile', {
 });
 
 var app = new Vue({
-    el: '#app'
+    el: '#app',
+    data:{
+        usernames:["chucklu","kerryjiang","joperezr","nkolev92"]
+    }
 });
