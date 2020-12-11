@@ -2,3 +2,11 @@ html, body {
     margin: 5px;
     padding: 0;
 }
+
+.chuck-card{
+    background-color: whitesmoke;
+    height: 300px;
+    width: 300px;
+    border-color: plum;
+    border-style: solid;
+}
