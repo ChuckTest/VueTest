@@ -1,7 +1,21 @@
 Vue.component('github-profile', {
-    template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>',
+    template: '#profile-template',
+    props:{
+        username:{
+            type: String,
+            required: true
+        }
+    },
     data: function () {
-        return { count: 0 }
+        return { 
+            user: {}
+         }
+    },
+    created(){
+        axios.get(`https://api.github.com/users/${this.username}`)
+        .then(response=>{
+            this.user = response.data
+        })
     }
 });
 

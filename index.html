@@ -3,16 +3,37 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="index.css">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://semantic-ui.com/stylesheets/rtl.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
 </head>
-
+<!--use the card of semantic-ui https://semantic-ui.com/views/card.html-->
 <body>
     <div id="app">
-    <github-profile></github-profile>
-    <github-profile></github-profile>
-    <github-profile></github-profile>
+    <github-profile username="chucklu"></github-profile>
     </div>
+    <script type="text/x-template" id="profile-template">
+        <div class="ui card">
+            <div class="image">
+              <img src="/images/avatar2/large/kristy.png">
+            </div>
+            <div class="content">
+              <a class="header">{{user.name}}</a>
+              <div class="meta">
+                <span class="date">Joined in {{user.created_at}}</span>
+              </div>
+              <div class="description">
+                Kristy is an art director living in New York.
+              </div>
+            </div>
+            <div class="extra content">
+              <a>
+                <i class="user icon"></i>
+                22 Friends
+              </a>
+            </div>
+          </div>
+    </script>
     <script src="index.js"></script>
 </body>
 
