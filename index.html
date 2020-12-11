@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://semantic-ui.com/stylesheets/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
 </head>
@@ -15,7 +15,7 @@
     <script type="text/x-template" id="profile-template">
         <div class="ui card">
             <div class="image">
-              <img src="/images/avatar2/large/kristy.png">
+              <img :src="user.avatar_url">
             </div>
             <div class="content">
               <a class="header">{{user.name}}</a>
@@ -23,13 +23,13 @@
                 <span class="date">Joined in {{user.created_at}}</span>
               </div>
               <div class="description">
-                Kristy is an art director living in New York.
+                {{user.bio}}
               </div>
             </div>
             <div class="extra content">
               <a>
                 <i class="user icon"></i>
-                22 Friends
+                {{user.followers}} Friends
               </a>
             </div>
           </div>
