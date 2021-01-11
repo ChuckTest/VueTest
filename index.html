@@ -1,42 +1,20 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.js"></script>
 </head>
 <!--use the card of semantic-ui https://semantic-ui.com/views/card.html-->
 <body>
     <div id="app">
-        <div class="ui cards">
-            <github-profile v-for="username in usernames" v-bind:username="username"></github-profile>
-        </div>
+      <form>
+        <label>Email</label>
+        <input v-if="flag">
+      </form>
     </div>
-    <script type="text/x-template" id="profile-template">
-        <div class="ui card">
-            <div class="image">
-              <img v-bind:src="user.avatar_url">
-            </div>
-            <div class="content">
-              <a class="header">{{user.name}}</a>
-              <div class="meta">
-                <span class="date">Joined in {{user.created_at}}</span>
-              </div>
-              <div class="description">
-                {{user.bio}}
-              </div>
-            </div>
-            <div class="extra content">
-              <a>
-                <i class="user icon"></i>
-                {{user.followers}} followers {{user.following}} following
-              </a>
-            </div>
-          </div>
-    </script>
-    <script src="index.js"></script>
 </body>
-
+<script src="index.js"></script>
 </html>
