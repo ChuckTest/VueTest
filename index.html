@@ -1,20 +1,26 @@
 <html>
 
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.js">
+  </script>
 </head>
-<!--use the card of semantic-ui https://semantic-ui.com/views/card.html-->
+
 <body>
-    <div id="app">
-      <form>
-        <label>Email</label>
-        <input v-if="flag">
-      </form>
-    </div>
+  <div id="app">
+    <form>
+      <label>Age</label>
+      <input name="age" v-if="flag" data-val="true" data-val-regex="Please input a valid email"
+        data-val-regex-pattern="^[0-9]{1,3}$">
+      <span data-valmsg-for="age" data-valmsg-replace="true"></span>
+    </form>
+  </div>
 </body>
 <script src="index.js"></script>
+
 </html>
