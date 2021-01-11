@@ -14,10 +14,12 @@
 <body>
   <div id="app">
     <form>
-      <label>Age</label>
-      <input name="age" v-if="flag" data-val="true" data-val-regex="Please input a valid email"
-        data-val-regex-pattern="^[0-9]{1,3}$">
-      <span data-valmsg-for="age" data-valmsg-replace="true"></span>
+      <div v-for="index in count" :key="index">
+        <label>Age{{index}}</label>
+        <input :name="'age'+index" v-if="flag" data-val="true" data-val-regex="Please input a valid email"
+          data-val-regex-pattern="^[0-9]{1,3}$">
+        <span :data-valmsg-for="'age'+index" data-valmsg-replace="true"></span>
+      </div>
     </form>
   </div>
 </body>
